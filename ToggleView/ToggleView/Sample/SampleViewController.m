@@ -1,22 +1,25 @@
 //
-//  ViewController.m
+//  SampleViewController.m
 //  ToggleView
 //
 //  Created by SOMTD on 12/10/14.
 //  Copyright (c) 2012年 somtd.com. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SampleViewController.h"
 
-@interface ViewController ()
+@interface SampleViewController ()
 
 @end
 
-@implementation ViewController
+@implementation SampleViewController
+@synthesize toggleView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    toggleView = [[ToggleView alloc]initWithFrame:CGRectMake(0, 100, 320, 75)];
+    [self.view addSubview:toggleView];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

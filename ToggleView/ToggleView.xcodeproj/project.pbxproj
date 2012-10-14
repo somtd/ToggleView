@@ -12,12 +12,15 @@
 		5A831FF0162A90AC00482291 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A831FEF162A90AC00482291 /* CoreGraphics.framework */; };
 		5A831FF6162A90AC00482291 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A831FF4162A90AC00482291 /* InfoPlist.strings */; };
 		5A831FF8162A90AC00482291 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A831FF7162A90AC00482291 /* main.m */; };
-		5A831FFC162A90AC00482291 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A831FFB162A90AC00482291 /* AppDelegate.m */; };
 		5A831FFE162A90AC00482291 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A831FFD162A90AC00482291 /* Default.png */; };
 		5A832000162A90AC00482291 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A831FFF162A90AC00482291 /* Default@2x.png */; };
 		5A832002162A90AC00482291 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A832001162A90AC00482291 /* Default-568h@2x.png */; };
-		5A832005162A90AC00482291 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A832004162A90AC00482291 /* ViewController.m */; };
-		5A832008162A90AC00482291 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A832006162A90AC00482291 /* ViewController.xib */; };
+		5A83201D162A954600482291 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A83201A162A954600482291 /* AppDelegate.m */; };
+		5A83201E162A954600482291 /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A83201C162A954600482291 /* SampleViewController.m */; };
+		5A832021162A955300482291 /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A83201F162A955300482291 /* SampleViewController.xib */; };
+		5A832024162A95FA00482291 /* ToggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A832023162A95FA00482291 /* ToggleView.m */; };
+		5A832028162A98AC00482291 /* toggle_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A832026162A98AC00482291 /* toggle_base@2x.png */; };
+		5A832029162A98AC00482291 /* toggle_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A832027162A98AC00482291 /* toggle_button@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,14 +32,18 @@
 		5A831FF5162A90AC00482291 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5A831FF7162A90AC00482291 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A831FF9162A90AC00482291 /* ToggleView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToggleView-Prefix.pch"; sourceTree = "<group>"; };
-		5A831FFA162A90AC00482291 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5A831FFB162A90AC00482291 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5A831FFD162A90AC00482291 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5A831FFF162A90AC00482291 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5A832001162A90AC00482291 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5A832003162A90AC00482291 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5A832004162A90AC00482291 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5A832007162A90AC00482291 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		5A832019162A954600482291 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5A83201A162A954600482291 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5A83201B162A954600482291 /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
+		5A83201C162A954600482291 /* SampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
+		5A832020162A955300482291 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = ToggleView/en.lproj/SampleViewController.xib; sourceTree = SOURCE_ROOT; };
+		5A832022162A95FA00482291 /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
+		5A832023162A95FA00482291 /* ToggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleView.m; sourceTree = "<group>"; };
+		5A832026162A98AC00482291 /* toggle_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_base@2x.png"; sourceTree = "<group>"; };
+		5A832027162A98AC00482291 /* toggle_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_button@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +90,8 @@
 		5A831FF1162A90AC00482291 /* ToggleView */ = {
 			isa = PBXGroup;
 			children = (
-				5A831FFA162A90AC00482291 /* AppDelegate.h */,
-				5A831FFB162A90AC00482291 /* AppDelegate.m */,
-				5A832003162A90AC00482291 /* ViewController.h */,
-				5A832004162A90AC00482291 /* ViewController.m */,
-				5A832006162A90AC00482291 /* ViewController.xib */,
+				5A83200F162A930F00482291 /* Sample */,
+				5A83200E162A930000482291 /* Classes */,
 				5A831FF2162A90AC00482291 /* Supporting Files */,
 			);
 			path = ToggleView;
@@ -105,6 +109,37 @@
 				5A832001162A90AC00482291 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A83200E162A930000482291 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5A832022162A95FA00482291 /* ToggleView.h */,
+				5A832023162A95FA00482291 /* ToggleView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5A83200F162A930F00482291 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				5A832025162A982400482291 /* Images */,
+				5A83201F162A955300482291 /* SampleViewController.xib */,
+				5A832019162A954600482291 /* AppDelegate.h */,
+				5A83201A162A954600482291 /* AppDelegate.m */,
+				5A83201B162A954600482291 /* SampleViewController.h */,
+				5A83201C162A954600482291 /* SampleViewController.m */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		5A832025162A982400482291 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5A832026162A98AC00482291 /* toggle_base@2x.png */,
+				5A832027162A98AC00482291 /* toggle_button@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +197,9 @@
 				5A831FFE162A90AC00482291 /* Default.png in Resources */,
 				5A832000162A90AC00482291 /* Default@2x.png in Resources */,
 				5A832002162A90AC00482291 /* Default-568h@2x.png in Resources */,
-				5A832008162A90AC00482291 /* ViewController.xib in Resources */,
+				5A832021162A955300482291 /* SampleViewController.xib in Resources */,
+				5A832028162A98AC00482291 /* toggle_base@2x.png in Resources */,
+				5A832029162A98AC00482291 /* toggle_button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,8 +211,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A831FF8162A90AC00482291 /* main.m in Sources */,
-				5A831FFC162A90AC00482291 /* AppDelegate.m in Sources */,
-				5A832005162A90AC00482291 /* ViewController.m in Sources */,
+				5A83201D162A954600482291 /* AppDelegate.m in Sources */,
+				5A83201E162A954600482291 /* SampleViewController.m in Sources */,
+				5A832024162A95FA00482291 /* ToggleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,12 +228,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		5A832006162A90AC00482291 /* ViewController.xib */ = {
+		5A83201F162A955300482291 /* SampleViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5A832007162A90AC00482291 /* en */,
+				5A832020162A955300482291 /* en */,
 			);
-			name = ViewController.xib;
+			name = SampleViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
