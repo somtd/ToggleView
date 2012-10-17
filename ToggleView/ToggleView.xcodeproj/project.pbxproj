@@ -21,6 +21,8 @@
 		5A832024162A95FA00482291 /* ToggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A832023162A95FA00482291 /* ToggleView.m */; };
 		5A832028162A98AC00482291 /* toggle_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A832026162A98AC00482291 /* toggle_base@2x.png */; };
 		5A832029162A98AC00482291 /* toggle_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A832027162A98AC00482291 /* toggle_button@2x.png */; };
+		5A8322FA162C490600482291 /* ToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8322F9162C490600482291 /* ToggleButton.m */; };
+		5A8322FE162C491700482291 /* ToggleBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8322FD162C491700482291 /* ToggleBase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		5A832023162A95FA00482291 /* ToggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleView.m; sourceTree = "<group>"; };
 		5A832026162A98AC00482291 /* toggle_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_base@2x.png"; sourceTree = "<group>"; };
 		5A832027162A98AC00482291 /* toggle_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_button@2x.png"; sourceTree = "<group>"; };
+		5A8322F8162C490600482291 /* ToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleButton.h; sourceTree = "<group>"; };
+		5A8322F9162C490600482291 /* ToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleButton.m; sourceTree = "<group>"; };
+		5A8322FC162C491700482291 /* ToggleBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleBase.h; sourceTree = "<group>"; };
+		5A8322FD162C491700482291 /* ToggleBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleBase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,10 @@
 			children = (
 				5A832022162A95FA00482291 /* ToggleView.h */,
 				5A832023162A95FA00482291 /* ToggleView.m */,
+				5A8322F8162C490600482291 /* ToggleButton.h */,
+				5A8322F9162C490600482291 /* ToggleButton.m */,
+				5A8322FC162C491700482291 /* ToggleBase.h */,
+				5A8322FD162C491700482291 /* ToggleBase.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -214,6 +224,8 @@
 				5A83201D162A954600482291 /* AppDelegate.m in Sources */,
 				5A83201E162A954600482291 /* SampleViewController.m in Sources */,
 				5A832024162A95FA00482291 /* ToggleView.m in Sources */,
+				5A8322FA162C490600482291 /* ToggleButton.m in Sources */,
+				5A8322FE162C491700482291 /* ToggleBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +341,7 @@
 				5A83200D162A90AC00482291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

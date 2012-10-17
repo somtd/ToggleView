@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class ToggleButton;
+@class ToggleBase;
+
 @protocol ToggleViewDelegate;
 
 typedef enum{
     ToggleViewTypeWithLabel,
-    ToggleViewTypeWithoutLabel,
+    ToggleViewTypeNoLabel,
 }ToggleViewType;
 
 @interface ToggleView : UIView <UIGestureRecognizerDelegate>
@@ -23,10 +26,11 @@ typedef enum{
     float _leftEdge;
     float _rightEdge;
     
-    UIImageView *_toggleButton;
+    ToggleButton *_toggleButton;
+    ToggleBase *_toggleBase;
     UIButton *_leftButton;
     UIButton *_rightButton;
-    UIImageView *_toggleBase;
+    
 }
 @property (nonatomic, assign) id<ToggleViewDelegate> toggleDelegate;
 @end
