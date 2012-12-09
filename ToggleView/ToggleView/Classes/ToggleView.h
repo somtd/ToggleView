@@ -27,6 +27,7 @@ typedef enum{
     
     ToggleButton *_toggleButton;
     ToggleBase *_toggleBase;
+    UIView *_baseView;
     UIButton *_leftButton;
     UIButton *_rightButton;
     
