@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ToggleView.h"
 
-@interface SampleViewController : UIViewController
+@interface SampleViewController : UIViewController <ToggleViewDelegate>
 
-@property(nonatomic, strong)ToggleView *toggleView;
+@property(nonatomic, strong)ToggleView *toggleViewWithLabel;
+@property(nonatomic, strong)ToggleView *toggleViewWithoutLabel;
+@property(nonatomic, strong)ToggleView *toggleViewBaseChange;
+@property(nonatomic, strong)ToggleView *toggleViewButtonChange;
 
 @end

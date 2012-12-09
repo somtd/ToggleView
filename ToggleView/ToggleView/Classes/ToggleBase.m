@@ -13,12 +13,15 @@ NSString *const TOGGLE_BASE_IMAGE_L     = @"toggle_base_l.png";
 NSString *const TOGGLE_BASE_IMAGE_R     = @"toggle_base_r.png";
 
 @implementation ToggleBase
+@synthesize baseType;
 
-- (id)initWithImage:(UIImage *)image baseType:(ToggleBaseType)baseType
+- (id)initWithImage:(UIImage *)image baseType:(ToggleBaseType)aBaseType
 {
     self = [super initWithImage:image];
     if (self) {
-        if (baseType == ToggleBaseTypeChangeImage)
+        
+        self.baseType = aBaseType;
+        if (self.baseType == ToggleBaseTypeChangeImage)
         {
             //default select "L"
             self.image = [UIImage imageNamed:TOGGLE_BASE_IMAGE_L];
@@ -30,12 +33,16 @@ NSString *const TOGGLE_BASE_IMAGE_R     = @"toggle_base_r.png";
 
 - (void)selectedLeftToggleBase
 {
-    self.image = [UIImage imageNamed:TOGGLE_BASE_IMAGE_L];
+    if (self.baseType == ToggleBaseTypeChangeImage) {
+        self.image = [UIImage imageNamed:TOGGLE_BASE_IMAGE_L];
+    }
 }
 
 - (void)selectedRightToggleBase
 {
-    self.image = [UIImage imageNamed:TOGGLE_BASE_IMAGE_R];
+    if (self.baseType == ToggleBaseTypeChangeImage) {
+        self.image = [UIImage imageNamed:TOGGLE_BASE_IMAGE_R];
+    }
 }
 
 @end

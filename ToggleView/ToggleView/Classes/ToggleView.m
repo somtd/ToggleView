@@ -9,12 +9,11 @@
 #import "ToggleView.h"
 #import "ToggleButton.h"
 #import "ToggleBase.h"
-
 //replace sample image files
 NSString *const TOGGLE_BUTTON_IMAGE      = @"toggle_button.png";
 NSString *const TOGGLE_BASE_IMAGE        = @"toggle_base.png";
 NSString *const TOGGLE_VIEW_BACKGROUND   = @"background.png";
-NSString *const LEFT_BUTTON_IMAGE        = @"left_button.png";
+NSString *const LEFT_BUTTON_IMAGE        = @"left_button_on.png";
 NSString *const LEFT_BUTTON_IMAGE_SEL    = @"left_button_off.png";
 NSString *const RIGHT_BUTTON_IMAGE       = @"right_button_on.png";
 NSString *const RIGHT_BUTTON_IMAGE_SEL   = @"right_button_off.png";
@@ -24,13 +23,18 @@ NSString *const RIGHT_BUTTON_IMAGE_SEL   = @"right_button_off.png";
 #define TOGGLE_SLIDE_DULATION 0.1f
 
 @implementation ToggleView 
-@synthesize  toggleDelegate;
+@synthesize toggleDelegate;
+@synthesize viewType;
 
 - (id)initWithFrame:(CGRect)frame
+     toggleViewType:(ToggleViewType)aViewType
+     toggleBaseType:(ToggleBaseType)aBaseType
+   toggleButtonType:(ToggleButtonType)aButtonType
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.frame = frame;
+        self.viewType = aViewType;
         
         self.backgroundColor = [UIColor clearColor];
         UIImageView *bgImageView = [[UIImageView alloc]initWithImage:
@@ -38,35 +42,42 @@ NSString *const RIGHT_BUTTON_IMAGE_SEL   = @"right_button_off.png";
         [self addSubview:bgImageView];
         
         //set up toggle base image.
-        _toggleBase = [[ToggleBase alloc]initWithImage:[UIImage imageNamed:TOGGLE_BASE_IMAGE] baseType:ToggleBaseTypeDefault];
+        _toggleBase = [[ToggleBase alloc]initWithImage:[UIImage imageNamed:TOGGLE_BASE_IMAGE] baseType:aBaseType];
         _toggleBase.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+        _toggleBase.userInteractionEnabled = YES;
         
         //set up toggle button image.
-        _toggleButton = [[ToggleButton alloc]initWithImage:[UIImage imageNamed:TOGGLE_BUTTON_IMAGE] buttonType:ToggleButtonTypeDefault];
+        _toggleButton = [[ToggleButton alloc]initWithImage:[UIImage imageNamed:TOGGLE_BUTTON_IMAGE] buttonType:aButtonType];
         _toggleButton.userInteractionEnabled = YES;
         
         //calculate left/right edge
-        _leftEdge = _toggleBase.frame.origin.x;
-        _rightEdge = _toggleBase.frame.origin.x + _toggleBase.frame.size.width;
+        _leftEdge = _toggleBase.frame.origin.x + _toggleButton.frame.size.width/2;
+        _rightEdge = _toggleBase.frame.origin.x + _toggleBase.frame.size.width - _toggleButton.frame.size.width/2;
         _toggleButton.center = CGPointMake(_leftEdge, self.frame.size.height/2);
         
-        //set up toggle left label image. 
-        _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_leftButton setFrame:LEFT_BUTTON_RECT];
-        [_leftButton setImage:[UIImage imageNamed:LEFT_BUTTON_IMAGE] forState:UIControlStateNormal];
-        [_leftButton setImage:[UIImage imageNamed:LEFT_BUTTON_IMAGE_SEL] forState:UIControlStateSelected];
-        [_leftButton addTarget:self action:@selector(onLeftButton:) forControlEvents:UIControlEventTouchUpInside];
-        _leftButton.center = CGPointMake(80, 26);
-        [self addSubview:_leftButton];
-        
-        //set up toggle right label image.
-        _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_rightButton setFrame:RIGHT_BUTTON_RECT];
-        [_rightButton setImage:[UIImage imageNamed:RIGHT_BUTTON_IMAGE] forState:UIControlStateNormal];
-        [_rightButton setImage:[UIImage imageNamed:RIGHT_BUTTON_IMAGE_SEL] forState:UIControlStateSelected];
-        [_rightButton addTarget:self action:@selector(onRightButton:) forControlEvents:UIControlEventTouchUpInside];
-        _rightButton.center = CGPointMake(240, 26);
-        [self addSubview:_rightButton];
+        if (self.viewType == ToggleViewTypeWithLabel)
+        {
+            //set up toggle left label image.
+            _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            [_leftButton setFrame:LEFT_BUTTON_RECT];
+            [_leftButton setImage:[UIImage imageNamed:LEFT_BUTTON_IMAGE] forState:UIControlStateNormal];
+            [_leftButton setImage:[UIImage imageNamed:LEFT_BUTTON_IMAGE_SEL] forState:UIControlStateSelected];
+            [_leftButton addTarget:self action:@selector(onLeftButton:) forControlEvents:UIControlEventTouchUpInside];
+            _leftButton.center = CGPointMake(_leftEdge - _leftButton.frame.size.width, _toggleBase.center.y);
+            [self addSubview:_leftButton];
+            
+            //set up toggle right label image.
+            _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            [_rightButton setFrame:RIGHT_BUTTON_RECT];
+            [_rightButton setImage:[UIImage imageNamed:RIGHT_BUTTON_IMAGE] forState:UIControlStateNormal];
+            [_rightButton setImage:[UIImage imageNamed:RIGHT_BUTTON_IMAGE_SEL] forState:UIControlStateSelected];
+            [_rightButton addTarget:self action:@selector(onRightButton:) forControlEvents:UIControlEventTouchUpInside];
+            _rightButton.center = CGPointMake(_rightEdge + _rightButton.frame.size.width, _toggleBase.center.y);
+            [self addSubview:_rightButton];
+            
+            _leftButton.selected = YES;
+            _rightButton.selected = NO;
+        }
         
         [self addSubview:_toggleBase];
         [self addSubview:_toggleButton];
@@ -80,11 +91,6 @@ NSString *const RIGHT_BUTTON_IMAGE_SEL   = @"right_button_off.png";
         [_toggleButton addGestureRecognizer:panGesture];
         [_toggleButton addGestureRecognizer:buttonTapGesture];
         [_toggleBase addGestureRecognizer:baseTapGesture];
-        
-        _leftButton.selected = YES;
-        _rightButton.selected = NO;
-        
-        // Initialization code
     }
     return self;
 }
@@ -94,8 +100,13 @@ NSString *const RIGHT_BUTTON_IMAGE_SEL   = @"right_button_off.png";
     [UIView animateWithDuration:TOGGLE_SLIDE_DULATION animations:^{
         _toggleButton.center = CGPointMake(_leftEdge, self.frame.size.height/2);
     }];
-    _leftButton.selected = YES;
-    _rightButton.selected = NO;
+    if (self.viewType == ToggleViewTypeWithLabel)
+    {
+        _leftButton.selected = YES;
+        _rightButton.selected = NO;
+    }
+    [_toggleBase selectedLeftToggleBase];
+    [_toggleButton selectedLeftToggleButton];
     [self.toggleDelegate selectLeftButton];
 }
 
@@ -104,8 +115,13 @@ NSString *const RIGHT_BUTTON_IMAGE_SEL   = @"right_button_off.png";
     [UIView animateWithDuration:TOGGLE_SLIDE_DULATION animations:^{
         _toggleButton.center = CGPointMake(_rightEdge, self.frame.size.height/2);
     }];
-    _leftButton.selected = NO;
-    _rightButton.selected = YES;
+    if (self.viewType == ToggleViewTypeWithLabel)
+    {
+        _leftButton.selected = NO;
+        _rightButton.selected = YES;
+    }
+    [_toggleBase selectedRightToggleBase];
+    [_toggleButton selectedRightToggleButton];
     [self.toggleDelegate selectRightButton];
 }
 
@@ -132,21 +148,36 @@ NSString *const RIGHT_BUTTON_IMAGE_SEL   = @"right_button_off.png";
         if (positonValue == 0.f)
         {
             _toggleButton.center = CGPointMake(_leftEdge, _toggleButton.center.y);
+            [_toggleBase selectedLeftToggleBase];
+            [_toggleButton selectedLeftToggleButton];
+            [self.toggleDelegate selectLeftButton];
+            
         }
         else if (positonValue == 1.f)
         {
             _toggleButton.center = CGPointMake(_rightEdge, _toggleButton.center.y);
+            [_toggleBase selectedRightToggleBase];
+            [_toggleButton selectedRightToggleButton];
+            [self.toggleDelegate selectRightButton];
         }
         else if (positonValue > 0.f && positonValue < 0.5f)
         {
             [UIView animateWithDuration:TOGGLE_SLIDE_DULATION animations:^{
                 _toggleButton.center = CGPointMake(_leftEdge, _toggleButton.center.y);
+            } completion:^(BOOL finished) {
+                [_toggleBase selectedLeftToggleBase];
+                [_toggleButton selectedLeftToggleButton];
+                [self.toggleDelegate selectLeftButton];
             }];
         }
         else if (positonValue >= 0.5f && positonValue < 1.f)
         {
             [UIView animateWithDuration:TOGGLE_SLIDE_DULATION animations:^{
                 _toggleButton.center = CGPointMake(_rightEdge, _toggleButton.center.y);
+            } completion:^(BOOL finished) {
+                [_toggleBase selectedRightToggleBase];
+                [_toggleButton selectedRightToggleButton];
+                [self.toggleDelegate selectRightButton];
             }];
         }
     }
@@ -160,12 +191,20 @@ NSString *const RIGHT_BUTTON_IMAGE_SEL   = @"right_button_off.png";
         {
             [UIView animateWithDuration:TOGGLE_SLIDE_DULATION animations:^{
                 _toggleButton.center = CGPointMake(_leftEdge, _toggleButton.center.y);
+            }completion:^(BOOL finished) {
+                [_toggleBase selectedLeftToggleBase];
+                [_toggleButton selectedLeftToggleButton];
+                [self.toggleDelegate selectLeftButton];
             }];
         }
         else if (_toggleButton.center.x == _leftEdge)
         {
             [UIView animateWithDuration:TOGGLE_SLIDE_DULATION animations:^{
                 _toggleButton.center = CGPointMake(_rightEdge, _toggleButton.center.y);
+            }completion:^(BOOL finished) {
+                [_toggleBase selectedRightToggleBase];
+                [_toggleButton selectedRightToggleButton];
+                [self.toggleDelegate selectRightButton];
             }];
         }
     }
@@ -179,12 +218,20 @@ NSString *const RIGHT_BUTTON_IMAGE_SEL   = @"right_button_off.png";
         {
             [UIView animateWithDuration:TOGGLE_SLIDE_DULATION animations:^{
                 _toggleButton.center = CGPointMake(_leftEdge, _toggleButton.center.y);
+            }completion:^(BOOL finished) {
+                [_toggleBase selectedLeftToggleBase];
+                [_toggleButton selectedLeftToggleButton];
+                [self.toggleDelegate selectLeftButton];
             }];
         }
         else if (_toggleButton.center.x == _leftEdge)
         {
             [UIView animateWithDuration:TOGGLE_SLIDE_DULATION animations:^{
                 _toggleButton.center = CGPointMake(_rightEdge, _toggleButton.center.y);
+            }completion:^(BOOL finished) {
+                [_toggleBase selectedRightToggleBase];
+                [_toggleButton selectedRightToggleButton];
+                [self.toggleDelegate selectRightButton];
             }];
         }
     }

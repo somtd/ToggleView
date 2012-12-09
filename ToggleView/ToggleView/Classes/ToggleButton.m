@@ -14,12 +14,14 @@ NSString *const TOGGLE_BUTTON_IMAGE_R    = @"toggle_button_r.png";
 
 
 @implementation ToggleButton
+@synthesize buttonType;
 
-- (id)initWithImage:(UIImage *)image buttonType:(ToggleButtonType)buttonType
+- (id)initWithImage:(UIImage *)image buttonType:(ToggleButtonType)aButtonType
 {
     self = [super initWithImage:image];
     if (self) {
-        if (buttonType == ToggleButtonTypeChangeImage)
+        self.buttonType = aButtonType;
+        if (self.buttonType == ToggleButtonTypeChangeImage)
         {
             //default select "L"
             self.image = [UIImage imageNamed:TOGGLE_BUTTON_IMAGE_L];
@@ -31,14 +33,18 @@ NSString *const TOGGLE_BUTTON_IMAGE_R    = @"toggle_button_r.png";
 
 - (void)selectedLeftToggleButton
 {
-    self.image = [UIImage imageNamed:TOGGLE_BUTTON_IMAGE_L];
+    if (self.buttonType == ToggleButtonTypeChangeImage)
+    {
+        self.image = [UIImage imageNamed:TOGGLE_BUTTON_IMAGE_L];
+    }
 }
 
 - (void)selectedRightToggleButton
 {
-    self.image = [UIImage imageNamed:TOGGLE_BUTTON_IMAGE_R];
+    if (self.buttonType == ToggleButtonTypeChangeImage)
+    {
+        self.image = [UIImage imageNamed:TOGGLE_BUTTON_IMAGE_R];
+
+    }
 }
-
-
-
 @end

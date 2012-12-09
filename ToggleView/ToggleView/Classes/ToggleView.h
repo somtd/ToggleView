@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-@class ToggleButton;
-@class ToggleBase;
+#import "ToggleButton.h"
+#import "ToggleBase.h"
 
 @protocol ToggleViewDelegate;
 
@@ -33,6 +32,12 @@ typedef enum{
     
 }
 @property (nonatomic, assign) id<ToggleViewDelegate> toggleDelegate;
+@property (nonatomic) ToggleViewType viewType;
+- (id)initWithFrame:(CGRect)frame
+     toggleViewType:(ToggleViewType)viewType
+     toggleBaseType:(ToggleBaseType)baseType
+   toggleButtonType:(ToggleButtonType)buttonType;
+
 @end
 
 @protocol ToggleViewDelegate <NSObject>

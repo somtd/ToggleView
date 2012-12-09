@@ -16,7 +16,8 @@ typedef enum{
 
 @interface ToggleBase : UIImageView
 
-- (id)initWithImage:(UIImage *)image baseType:(ToggleBaseType)baseType;
+@property (nonatomic) ToggleBaseType baseType;
+- (id)initWithImage:(UIImage *)image baseType:(ToggleBaseType)aBaseType;
 - (void)selectedLeftToggleBase;
 - (void)selectedRightToggleBase;
 

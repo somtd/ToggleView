@@ -19,10 +19,20 @@
 		5A83201E162A954600482291 /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A83201C162A954600482291 /* SampleViewController.m */; };
 		5A832021162A955300482291 /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A83201F162A955300482291 /* SampleViewController.xib */; };
 		5A832024162A95FA00482291 /* ToggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A832023162A95FA00482291 /* ToggleView.m */; };
-		5A832028162A98AC00482291 /* toggle_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A832026162A98AC00482291 /* toggle_base@2x.png */; };
-		5A832029162A98AC00482291 /* toggle_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A832027162A98AC00482291 /* toggle_button@2x.png */; };
 		5A8322FA162C490600482291 /* ToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8322F9162C490600482291 /* ToggleButton.m */; };
 		5A8322FE162C491700482291 /* ToggleBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8322FD162C491700482291 /* ToggleBase.m */; };
+		5AF61B78167491EB00E41B21 /* toggle_base.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B76167491EB00E41B21 /* toggle_base.png */; };
+		5AF61B79167491EB00E41B21 /* toggle_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B77167491EB00E41B21 /* toggle_button.png */; };
+		5AF61B7C1674926D00E41B21 /* toggle_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B7A1674926C00E41B21 /* toggle_base@2x.png */; };
+		5AF61B7F167493BF00E41B21 /* toggle_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B7E167493BF00E41B21 /* toggle_button@2x.png */; };
+		5AF61B841674942F00E41B21 /* left_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B801674942F00E41B21 /* left_button_off@2x.png */; };
+		5AF61B851674942F00E41B21 /* left_button_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B811674942F00E41B21 /* left_button_on@2x.png */; };
+		5AF61B861674942F00E41B21 /* right_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B821674942F00E41B21 /* right_button_off@2x.png */; };
+		5AF61B871674942F00E41B21 /* right_button_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B831674942F00E41B21 /* right_button_on@2x.png */; };
+		5AF61B8A16749B7D00E41B21 /* toggle_base_l@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B8816749B7D00E41B21 /* toggle_base_l@2x.png */; };
+		5AF61B8B16749B7D00E41B21 /* toggle_base_r@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B8916749B7D00E41B21 /* toggle_base_r@2x.png */; };
+		5AF61B8E1674DACC00E41B21 /* toggle_button_l@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B8C1674DACC00E41B21 /* toggle_button_l@2x.png */; };
+		5AF61B8F1674DACC00E41B21 /* toggle_button_r@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF61B8D1674DACC00E41B21 /* toggle_button_r@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,12 +54,22 @@
 		5A832020162A955300482291 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = ToggleView/en.lproj/SampleViewController.xib; sourceTree = SOURCE_ROOT; };
 		5A832022162A95FA00482291 /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
 		5A832023162A95FA00482291 /* ToggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleView.m; sourceTree = "<group>"; };
-		5A832026162A98AC00482291 /* toggle_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_base@2x.png"; sourceTree = "<group>"; };
-		5A832027162A98AC00482291 /* toggle_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_button@2x.png"; sourceTree = "<group>"; };
 		5A8322F8162C490600482291 /* ToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleButton.h; sourceTree = "<group>"; };
 		5A8322F9162C490600482291 /* ToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleButton.m; sourceTree = "<group>"; };
 		5A8322FC162C491700482291 /* ToggleBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleBase.h; sourceTree = "<group>"; };
 		5A8322FD162C491700482291 /* ToggleBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleBase.m; sourceTree = "<group>"; };
+		5AF61B76167491EB00E41B21 /* toggle_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggle_base.png; sourceTree = "<group>"; };
+		5AF61B77167491EB00E41B21 /* toggle_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggle_button.png; sourceTree = "<group>"; };
+		5AF61B7A1674926C00E41B21 /* toggle_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_base@2x.png"; sourceTree = "<group>"; };
+		5AF61B7E167493BF00E41B21 /* toggle_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_button@2x.png"; sourceTree = "<group>"; };
+		5AF61B801674942F00E41B21 /* left_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_button_off@2x.png"; sourceTree = "<group>"; };
+		5AF61B811674942F00E41B21 /* left_button_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_button_on@2x.png"; sourceTree = "<group>"; };
+		5AF61B821674942F00E41B21 /* right_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_button_off@2x.png"; sourceTree = "<group>"; };
+		5AF61B831674942F00E41B21 /* right_button_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_button_on@2x.png"; sourceTree = "<group>"; };
+		5AF61B8816749B7D00E41B21 /* toggle_base_l@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_base_l@2x.png"; sourceTree = "<group>"; };
+		5AF61B8916749B7D00E41B21 /* toggle_base_r@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_base_r@2x.png"; sourceTree = "<group>"; };
+		5AF61B8C1674DACC00E41B21 /* toggle_button_l@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_button_l@2x.png"; sourceTree = "<group>"; };
+		5AF61B8D1674DACC00E41B21 /* toggle_button_r@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toggle_button_r@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +166,18 @@
 		5A832025162A982400482291 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				5A832026162A98AC00482291 /* toggle_base@2x.png */,
-				5A832027162A98AC00482291 /* toggle_button@2x.png */,
+				5AF61B8816749B7D00E41B21 /* toggle_base_l@2x.png */,
+				5AF61B8916749B7D00E41B21 /* toggle_base_r@2x.png */,
+				5AF61B801674942F00E41B21 /* left_button_off@2x.png */,
+				5AF61B811674942F00E41B21 /* left_button_on@2x.png */,
+				5AF61B821674942F00E41B21 /* right_button_off@2x.png */,
+				5AF61B831674942F00E41B21 /* right_button_on@2x.png */,
+				5AF61B7A1674926C00E41B21 /* toggle_base@2x.png */,
+				5AF61B7E167493BF00E41B21 /* toggle_button@2x.png */,
+				5AF61B76167491EB00E41B21 /* toggle_base.png */,
+				5AF61B77167491EB00E41B21 /* toggle_button.png */,
+				5AF61B8C1674DACC00E41B21 /* toggle_button_l@2x.png */,
+				5AF61B8D1674DACC00E41B21 /* toggle_button_r@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -208,8 +238,18 @@
 				5A832000162A90AC00482291 /* Default@2x.png in Resources */,
 				5A832002162A90AC00482291 /* Default-568h@2x.png in Resources */,
 				5A832021162A955300482291 /* SampleViewController.xib in Resources */,
-				5A832028162A98AC00482291 /* toggle_base@2x.png in Resources */,
-				5A832029162A98AC00482291 /* toggle_button@2x.png in Resources */,
+				5AF61B78167491EB00E41B21 /* toggle_base.png in Resources */,
+				5AF61B79167491EB00E41B21 /* toggle_button.png in Resources */,
+				5AF61B7C1674926D00E41B21 /* toggle_base@2x.png in Resources */,
+				5AF61B7F167493BF00E41B21 /* toggle_button@2x.png in Resources */,
+				5AF61B841674942F00E41B21 /* left_button_off@2x.png in Resources */,
+				5AF61B851674942F00E41B21 /* left_button_on@2x.png in Resources */,
+				5AF61B861674942F00E41B21 /* right_button_off@2x.png in Resources */,
+				5AF61B871674942F00E41B21 /* right_button_on@2x.png in Resources */,
+				5AF61B8A16749B7D00E41B21 /* toggle_base_l@2x.png in Resources */,
+				5AF61B8B16749B7D00E41B21 /* toggle_base_r@2x.png in Resources */,
+				5AF61B8E1674DACC00E41B21 /* toggle_button_l@2x.png in Resources */,
+				5AF61B8F1674DACC00E41B21 /* toggle_button_r@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

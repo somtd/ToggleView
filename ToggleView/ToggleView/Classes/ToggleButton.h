@@ -15,10 +15,9 @@ typedef enum{
 }ToggleButtonType;
 
 @interface ToggleButton : UIImageView
-{
-    
-}
-- (id)initWithImage:(UIImage *)image buttonType:(ToggleButtonType)buttonType;
+
+@property (nonatomic) ToggleButtonType buttonType;
+- (id)initWithImage:(UIImage *)image buttonType:(ToggleButtonType)aButtonType;
 - (void)selectedLeftToggleButton;
 - (void)selectedRightToggleButton;
 
