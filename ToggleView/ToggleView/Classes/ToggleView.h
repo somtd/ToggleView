@@ -18,6 +18,11 @@ typedef enum{
     ToggleViewTypeNoLabel,
 }ToggleViewType;
 
+typedef enum{
+    ToggleButtonSelectedLeft,
+    ToggleButtonSelectedRight,
+}ToggleButtonSelected;
+
 @interface ToggleView : UIView <UIGestureRecognizerDelegate>
 {
     id<ToggleViewDelegate> _toggleDelegate;
@@ -34,6 +39,7 @@ typedef enum{
 }
 @property (nonatomic, assign) id<ToggleViewDelegate> toggleDelegate;
 @property (nonatomic) ToggleViewType viewType;
+@property (nonatomic) ToggleButtonSelected selectedButton;
 - (id)initWithFrame:(CGRect)frame
      toggleViewType:(ToggleViewType)viewType
      toggleBaseType:(ToggleBaseType)baseType

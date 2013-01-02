@@ -11,7 +11,7 @@ toggleViewWithLabel.toggleDelegate = self;
 
 ## Toggle without label.
 ```objectivec
-toggleViewWithoutLabel = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeNoLabel toggleBaseType:ToggleBaseTypeDefault toggleButtonType:ToggleButtonTypeDefault];
+toggleViewWithoutLabel = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeNoLabel toggleBaseType:ToggleBaseTypeDefault toggleButtonType:ToggleButtonTypeDefault];  
 toggleViewWithoutLabel.toggleDelegate = self;
 ```
     

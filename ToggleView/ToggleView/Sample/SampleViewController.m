@@ -68,6 +68,10 @@
     [self.view addSubview:label2];
     [self.view addSubview:label3];
     [self.view addSubview:label4];
+    
+    [toggleViewBaseChange setSelectedButton:ToggleButtonSelectedRight];
+    [toggleViewButtonChange setSelectedButton:ToggleButtonSelectedRight];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,6 +79,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - ToggleViewDelegate
 
 - (void)selectLeftButton
 {
