@@ -2,7 +2,8 @@
 ==========
 ToggleView is easy-to-use original toggle button.  
 (see sample Xcode project in /Sample)
-![toggleView_design1](http://f.cl.ly/items/0q0B422z3f1V3d2z1M3q/toggleView_design1.png)
+![toggleView_design1](http://f.cl.ly/items/0q0B422z3f1V3d2z1M3q/toggleView_design1.png)  
+
 ToggleViewの主な要素は、 
 
 - ToggleView
