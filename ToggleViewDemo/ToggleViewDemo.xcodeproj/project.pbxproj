@@ -13,15 +13,17 @@
 		5A118B3C17A4E79300B02B01 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A118B3117A4E79300B02B01 /* Default.png */; };
 		5A118B3D17A4E79300B02B01 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A118B3217A4E79300B02B01 /* Default@2x.png */; };
 		5A118B3E17A4E79300B02B01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A118B3417A4E79300B02B01 /* InfoPlist.strings */; };
-		5A118B3F17A4E79300B02B01 /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A118B3617A4E79300B02B01 /* SampleViewController.xib */; };
 		5A118B4017A4E79300B02B01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A118B3817A4E79300B02B01 /* main.m */; };
 		5A118B4117A4E79300B02B01 /* ToggleViewDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A118B3917A4E79300B02B01 /* ToggleViewDemo-Info.plist */; };
+		5A118B4217A4E86300B02B01 /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A118B3617A4E79300B02B01 /* SampleViewController.xib */; };
 		5A831FEC162A90AC00482291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A831FEB162A90AC00482291 /* UIKit.framework */; };
 		5A831FEE162A90AC00482291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A831FED162A90AC00482291 /* Foundation.framework */; };
 		5A831FF0162A90AC00482291 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A831FEF162A90AC00482291 /* CoreGraphics.framework */; };
+		A7EDB06E1FF44A4EB2AFE4BD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4DA87B78F14BE0B5F5E1C5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B3BEBAA13994110BABAE2B1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5A118B2A17A4E73500B02B01 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		5A118B2B17A4E73500B02B01 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		5A118B2C17A4E73500B02B01 /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = SOURCE_ROOT; };
@@ -38,6 +40,7 @@
 		5A831FEB162A90AC00482291 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5A831FED162A90AC00482291 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5A831FEF162A90AC00482291 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9D4DA87B78F14BE0B5F5E1C5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +51,7 @@
 				5A831FEC162A90AC00482291 /* UIKit.framework in Frameworks */,
 				5A831FEE162A90AC00482291 /* Foundation.framework in Frameworks */,
 				5A831FF0162A90AC00482291 /* CoreGraphics.framework in Frameworks */,
+				A7EDB06E1FF44A4EB2AFE4BD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +84,7 @@
 				5A831FF1162A90AC00482291 /* ToggleViewDemo */,
 				5A831FEA162A90AC00482291 /* Frameworks */,
 				5A831FE8162A90AC00482291 /* Products */,
+				3B3BEBAA13994110BABAE2B1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +102,7 @@
 				5A831FEB162A90AC00482291 /* UIKit.framework */,
 				5A831FED162A90AC00482291 /* Foundation.framework */,
 				5A831FEF162A90AC00482291 /* CoreGraphics.framework */,
+				9D4DA87B78F14BE0B5F5E1C5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A83200B162A90AC00482291 /* Build configuration list for PBXNativeTarget "ToggleViewDemo" */;
 			buildPhases = (
+				3DD03B324D184FA0922CC75E /* Check Pods Manifest.lock */,
 				5A831FE3162A90AC00482291 /* Sources */,
 				5A831FE4162A90AC00482291 /* Frameworks */,
 				5A831FE5162A90AC00482291 /* Resources */,
+				79AD840016D8484683EB6B8C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,12 +188,45 @@
 				5A118B3C17A4E79300B02B01 /* Default.png in Resources */,
 				5A118B3D17A4E79300B02B01 /* Default@2x.png in Resources */,
 				5A118B3E17A4E79300B02B01 /* InfoPlist.strings in Resources */,
-				5A118B3F17A4E79300B02B01 /* SampleViewController.xib in Resources */,
 				5A118B4117A4E79300B02B01 /* ToggleViewDemo-Info.plist in Resources */,
+				5A118B4217A4E86300B02B01 /* SampleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DD03B324D184FA0922CC75E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79AD840016D8484683EB6B8C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A831FE3162A90AC00482291 /* Sources */ = {
@@ -271,6 +312,7 @@
 		};
 		5A83200C162A90AC00482291 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3BEBAA13994110BABAE2B1 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToggleViewDemo-Prefix.pch";
@@ -282,6 +324,7 @@
 		};
 		5A83200D162A90AC00482291 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3BEBAA13994110BABAE2B1 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToggleViewDemo-Prefix.pch";

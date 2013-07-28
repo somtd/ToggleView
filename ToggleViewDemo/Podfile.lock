@@ -1,0 +1,14 @@
+PODS:
+  - ToggleView (0.0.1)
+
+DEPENDENCIES:
+  - ToggleView (from `..`)
+
+EXTERNAL SOURCES:
+  ToggleView:
+    :path: ..
+
+SPEC CHECKSUMS:
+  ToggleView: f61312fa733b9af8399d94f83c6fcdde0a842a71
+
+COCOAPODS: 0.22.3
