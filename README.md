@@ -4,79 +4,30 @@ ToggleView is easy-to-use original toggle button.
 (see sample Xcode project in /Sample)
 ![toggleView_design1](http://f.cl.ly/items/0q0B422z3f1V3d2z1M3q/toggleView_design1.png)  
 
-ToggleViewの主な要素は、 
+##Requirements
+iOS 5.1 later
 
-- ToggleView
-- ToggleButton
-- ToggleBase
+##Installing
+By using CocoaPods
 
-となっており、**ToggleView**が**ToggleBase**というボタンが移動する範囲の背景画像をもつビューと、ToggleBaseの上を左右いったり来たりする**ToggleButton**というボタンのビューからなりたっています。
-**ToggleBase**、**ToggleButton**それぞれデザインを自由に入れられるようになっています。
-
-##ToggleViewのタイプ
-ToggleViewのタイプは現在、２種類用意しています。
-引数の**toggleViewType:**を変更することで簡単に設定可能です。 
-
-**toggleViewType:ToggleViewTypeWithLabel**:ToggleViewの左右にタップ可能なラベルがついているタイプ 
-
-```objectivec
-toggleViewWithLabel = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeWithLabel toggleBaseType:ToggleBaseTypeDefault toggleButtonType:ToggleButtonTypeDefault];
-toggleViewWithLabel.toggleDelegate = self;
+```
+pod 'ToggleView', '~> 0.0.1'
 ```
 
-**toggleViewType:ToggleViewTypeNoLabel**:ToggleViewの左右にラベルがついていないタイプ 
+##Usage
+Import header
 
-```objectivec
-toggleViewWithoutLabel = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeNoLabel toggleBaseType:ToggleBaseTypeDefault toggleButtonType:ToggleButtonTypeDefault];  
-toggleViewWithoutLabel.toggleDelegate = self;
 ```
-
-##ToggleBase（トグル・スイッチの背景）のタイプ
-トグル・スイッチの背景を選択している状態に合わせて変更することができます。引数の**toggleBaseType:**を変更することで簡単に設定可能です。
-
-**toggleBaseType:ToggleBaseTypeChangeImage**:ToggleViewの選択状態に応じて背景画像が変わるタイプ
-
-```objectivec
-toggleViewBaseChange = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeNoLabel toggleBaseType:ToggleBaseTypeChangeImage toggleButtonType:ToggleButtonTypeDefault];
-toggleViewBaseChange.toggleDelegate = self;
-```
-背景画像は**ToggleBase.m**の下記のファイル名を置き換えてください。
-
-```objectivec
-//change base image option
-NSString *const TOGGLE_BASE_IMAGE_L     = @"toggle_base_l.png";
-NSString *const TOGGLE_BASE_IMAGE_R     = @"toggle_base_r.png";
-```
-##ToggleBase（トグル・スイッチのボタン）のタイプ
-トグル・スイッチのボタンを選択している状態に合わせて変更することができます。引数の**toggleButtonType:**を変更することで簡単に設定可能です。
-
-**toggleButtonType:ToggleButtonTypeChangeImage**:ToggleViewの選択状態に応じて背景画像が変わるタイプ
-
-```objectivec
-toggleViewButtonChange = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeNoLabel toggleBaseType:ToggleBaseTypeDefault toggleButtonType:ToggleButtonTypeChangeImage];
-toggleViewButtonChange.toggleDelegate = self;
-```
-ボタン画像は**ToggleButton.m**の下記のファイル名を置き換えてください。
-
-```objectivec
-//change button image option
-NSString *const TOGGLE_BUTTON_IMAGE_L    = @"toggle_button_l.png";
-NSString *const TOGGLE_BUTTON_IMAGE_R    = @"toggle_button_r.png";
-```
-
-##ToggleViewDelegateメソッドの実装
-
-デリゲートというほどでもないですが、 ToggleView側でボタンを切り替える毎にSampleViewController側でも状態の切り替えを受け取るようになってます。
-
-**SampleViewController.h**
-
-```objectivec
 #import "ToggleView.h"
+```
+and set Protocol 'ToggleViewDelegate' at header file.
+
+```
 @interface SampleViewController : UIViewController <ToggleViewDelegate>
 ```
-**SampleViewController.m**
+you also add ToggleViewDelegate Methods at source file.
 
-```objectivec
+```
 #pragma mark - ToggleViewDelegate
 
 - (void)selectLeftButton
@@ -90,38 +41,76 @@ NSString *const TOGGLE_BUTTON_IMAGE_R    = @"toggle_button_r.png";
 }
 ```
 
-##TogleViewのプロパティ
-プロパティに関しては最低限、トグル・スイッチの選択のみ用意しています。
 
-**ToggleView.h**
+##Elements of UI parts
+There are main elements of UI parts in this library.
+
+- ToggleView
+- ToggleButton
+- ToggleBase
+
+There parts could change theirs images as you like.
+
+
+##Type of ToggleView
+Currently we have **two** types of ToggleView.
+
+### ToggleViewTypeWithLabel
+This ToggleView type has both side labels and enable to tap.
 
 ```objectivec
-@property (nonatomic) ToggleButtonSelected selectedButton;
+toggleViewWithLabel = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeWithLabel toggleBaseType:ToggleBaseTypeDefault toggleButtonType:ToggleButtonTypeDefault];
+toggleViewWithLabel.toggleDelegate = self;
 ```
-
-選択状態を外部からも変更できるように実装しています。 
-
-**ToggleView.m**
+### toggleViewType:ToggleViewTypeNoLabel
+This ToggleView type has no label.
 
 ```objectivec
-- (void)setSelectedButton:(ToggleButtonSelected)selectedButton
-{
-    switch (selectedButton) {
-        case ToggleButtonSelectedLeft:
-            [self onLeftButton:nil];
-            break;
-        case ToggleButtonSelectedRight:
-            [self onRightButton:nil];
-            break;
-        default:
-            break;
-    }
-}
+toggleViewWithoutLabel = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeNoLabel toggleBaseType:ToggleBaseTypeDefault toggleButtonType:ToggleButtonTypeDefault];  
+toggleViewWithoutLabel.toggleDelegate = self;
 ```
 
-##デザイン上の注意点
-サンプルで表示されているデザインのようにトグル・スイッチの背景の外形とボタンの外形にマージンをとるためには、ボタンのデザイン部分に下図のように透明部分を作ってあげる必要があります。 
+##Type of ToggleBase
+also you could change background image.
 
-背景の外形とスイッチの外形をピッタリにしたい場合はこの限りではありません。
+### ToggleBaseTypeChangeImage
+This `ToggleBase type` could change background image of toggle base when you change side you selected.
+
+```objectivec
+toggleViewBaseChange = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeNoLabel toggleBaseType:ToggleBaseTypeChangeImage toggleButtonType:ToggleButtonTypeDefault];
+toggleViewBaseChange.toggleDelegate = self;
+```
+You set the image of both.
+
+**ToggleBase.m**
+
+```objectivec
+//change base image option
+NSString *const TOGGLE_BASE_IMAGE_L     = @"toggle_base_l.png";
+NSString *const TOGGLE_BASE_IMAGE_R     = @"toggle_base_r.png";
+```
+
+## Type of ToggleButton
+of course you could change button image. 
+
+### ToggleButtonTypeChangeImage
+This `ToggleButton type` could change button image when you change side you selected.
+
+```objectivec
+toggleViewButtonChange = [[ToggleView alloc]initWithFrame:frame toggleViewType:ToggleViewTypeNoLabel toggleBaseType:ToggleBaseTypeDefault toggleButtonType:ToggleButtonTypeChangeImage];
+toggleViewButtonChange.toggleDelegate = self;
+```
+
+**ToggleButton.m**
+
+```objectivec
+//change button image option
+NSString *const TOGGLE_BUTTON_IMAGE_L    = @"toggle_button_l.png";
+NSString *const TOGGLE_BUTTON_IMAGE_R    = @"toggle_button_r.png";
+```
+
+##Notice of designing button.
+You should create the transparent part around button image if you want to make margin between background and button.
+
 
 ![toggleView_design2](http://f.cl.ly/items/3d0A0C381j3o401i2C03/toggleView_design2.png)    
